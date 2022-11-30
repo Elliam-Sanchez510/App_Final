@@ -1,8 +1,14 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity, Button, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+
+
 
 const Home = () => {
+
+
     return (
         <ScrollView style={styles.Container}>
 
@@ -27,6 +33,59 @@ const Home = () => {
                         }}
 
                     />
+                </View>
+
+                <View style={styles.Text}>
+                    <Text style={styles.Text1}>
+                        Cosecha experiencias en tu estancia en nuestro Hotel. Vivirás momentos
+                        agradables que quedarán en tu memoria.
+                    </Text>
+                </View>
+
+                <Text style={styles.TextServicios}>Servicios</Text>
+
+
+                <View style={styles.Icons}>
+
+                    <View>
+                        <MaterialCommunityIcons
+                            name="car-settings"
+                            style={styles.IconsServicios}
+                        />
+                        <Text>Parqueo privado</Text>
+                    </View>
+
+                    <View>
+                        <MaterialCommunityIcons
+                            name="wifi-arrow-left-right"
+                            style={styles.IconsServicios}
+                        />
+                        <Text>Wifi</Text>
+                    </View>
+
+                    <View>
+                        <MaterialCommunityIcons
+                            name="car-child-seat"
+                            style={styles.IconsServicios}
+                        />
+                        <Text>Juegos para niños</Text>
+                    </View>
+
+                    <View>
+                        <MaterialCommunityIcons
+                            name="bathtub"
+                            style={styles.IconsServicios}
+                        />
+                        <Text>Piscinas</Text>
+                    </View>
+
+                    <View>
+                        <MaterialIcons
+                            name="sports-tennis"
+                            style={styles.IconsServicios}
+                        />
+                        <Text>Cancha de tennis</Text>
+                    </View>
 
                 </View>
 
@@ -85,5 +144,38 @@ const styles = StyleSheet.create({
         height: 200,
         borderRadius: 8,
     },
+    Text: {
+        flex: 1,
+        width: '90%',
+        alignItems: 'center',
+        paddingStart: 30,
+        // backgroundColor: 'gray',
+
+    },
+    Text1: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        textAlign: 'justify',
+        paddingStart: 10,
+    },
+
+    TextServicios: {
+        textAlign: 'center',
+        fontSize: 20,
+        margin: 5,
+        fontWeight: 'bold',
+    },
+    Icons: {
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: 'pink'
+    },
+    IconsServicios: {
+        fontSize: 40,
+        color: 'gray',
+    }
+
+    // https://www.hotelvinasqueirolo.com/
+
 
 })

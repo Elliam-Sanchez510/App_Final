@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
         borderRadius: 15,
     },
     CreateProfile: {
-        fontFamily: 'arial',
         fontWeight: 'bold',
         fontSize: 20,
         padding: 10,
