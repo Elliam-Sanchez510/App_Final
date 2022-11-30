@@ -1,19 +1,26 @@
 import { ScrollView, Image, StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+
+
 
 const Notification = () => {
     return (
         <ScrollView>
-            
+            <View>
+
+
+            </View>
+
+
         </ScrollView>
     )
 }
 export default Notification;
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     Container: {
+        paddingTop: 100,
+        paddingHorizontal: 30,
     },
 
 })

@@ -1,42 +1,32 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity, Button, Image } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 const Home = () => {
     return (
-        <ScrollView>
+        <ScrollView style={styles.Container}>
 
-            <View>
-                <View style={styles.Welcome}>
-                    <Text style={styles.Container}>
-                        Hola! Bienvenidos
-                    </Text>
-                </View>
-
-                <View style={styles.Login}>
+            <View style={styles.Container}>
+                <View style={styles.searchSection}>
                     <TextInput
-                        placeholder='Correo@gmail.com'
-                        style={styles.Input}
+                        placeholder='Buscar'
+                        style={styles.Search}
                     />
-
-                    <TextInput
-                        placeholder='Password'
-                        style={styles.Input}
-                        secureTextEntry={true}
-                    />
-
-                    <TouchableOpacity style={styles.Button}>
-                        <Text style={styles.TextButton}>Login</Text>
-                    </TouchableOpacity>
-
-                    <View style={styles.Register}>
-                        <TouchableOpacity style={styles.ButtonFacebook}>
-                            <Text style={styles.TextButton}>Facebook</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={styles.ButtonGoogle}>
-                            <Text style={styles.TextButton}>Google</Text>
+                    <View style={styles.IconSearch}>
+                        <TouchableOpacity>
+                            <AntDesign name="search1" size={30} color="black" />
                         </TouchableOpacity>
                     </View>
+                </View>
+
+                <View style={styles.Image}>
+                    <Image
+                        style={styles.Images1}
+                        source={{
+                            uri: "https://megaricos.com/wp-content/uploads/2019/07/shutterstock_184155629.jpg"
+                        }}
+
+                    />
 
                 </View>
 
@@ -49,60 +39,51 @@ export default Home;
 
 const styles = StyleSheet.create({
     Container: {
-        fontFamily: 'ProductSans-Regular',
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: 'blue',
-        textAlign: 'center',
+        // flex: 1,
+        // backgroundColor: 'gray',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+
     },
-    Welcome: {
-        margin: 15,
-    },
-    Login: {
-        paddingStart: 10,
-        backgroundColor: 'gray',
-        width: '100%',
-        height: '73%',
-        left: 10
-    },
-    Input: {
+    searchSection: {
+        flex: 1,
         flexDirection: 'row',
-        width: '90%',
-        padding: 8,
-        marginTop: 16,
-        borderWidth: 2,
-        borderColor: '#03A9F4',
-        borderRadius: 15,
-        backgroundColor: '#ffffff',
-        paddingStart: 20
-    },
-    Button: {
-        margin: 10,
-        backgroundColor: '#004dcf',
-        borderRadius: 8,
-        width: '35%',
-        height: 35,
-        left: 100
-    },
-    TextButton: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        color: 'white',
         alignItems: 'center',
-        padding: 3,
+        // backgroundColor: '#fff',
+        paddingStart: 30
     },
-    Register: {
-        flexDirection: 'row',
-        padding: 10,
-        marginTop: 150,
-        left: 60,
-        width: '50%',
+    Search: {
+        flex: 1,
+        paddingTop: 10,
+        paddingRight: 10,
+        paddingBottom: 10,
+        backgroundColor: '#fff',
+        color: '#424242',
+        borderWidth: 2,
+        borderRadius: 10,
+        paddingLeft: 10,
+        marginTop: 15,
+        borderColor: '#009688',
+        paddingStart: 20,
     },
-    ButtonFacebook: {
-        backgroundColor: 'blue',
+    IconSearch: {
+        top: 8,
+        right: 35,
+        fontSize: 10,
+        borderRadius: 10
+
     },
-    ButtonGoogle: {
-        backgroundColor: 'red'
-    }
+    Image: {
+        width: '90%',
+        margin: 5,
+        // backgroundColor: 'green'
+        paddingStart: 10,
+    },
+    Images1: {
+        margin: 13,
+        width: '100%',
+        height: 200,
+        borderRadius: 8,
+    },
+
 })
