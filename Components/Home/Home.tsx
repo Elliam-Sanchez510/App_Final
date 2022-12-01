@@ -47,42 +47,42 @@ const Home = () => {
 
                 <View style={styles.Icons}>
 
-                    <View>
+                    <View style={styles.IconsServicios}>
                         <MaterialCommunityIcons
                             name="car-settings"
-                            style={styles.IconsServicios}
+                            style={styles.Icons1}
                         />
                         <Text>Parqueo privado</Text>
                     </View>
 
-                    <View>
+                    <View style={styles.IconsServicios}>
                         <MaterialCommunityIcons
                             name="wifi-arrow-left-right"
-                            style={styles.IconsServicios}
+                            style={styles.Icons1}
                         />
                         <Text>Wifi</Text>
                     </View>
 
-                    <View>
+                    <View style={styles.IconsServicios}>
                         <MaterialCommunityIcons
                             name="car-child-seat"
-                            style={styles.IconsServicios}
+                            style={styles.Icons1}
                         />
                         <Text>Juegos para niños</Text>
                     </View>
 
-                    <View>
+                    <View style={styles.IconsServicios}>
                         <MaterialCommunityIcons
                             name="bathtub"
-                            style={styles.IconsServicios}
+                            style={styles.Icons1}
                         />
                         <Text>Piscinas</Text>
                     </View>
 
-                    <View>
+                    <View style={styles.IconsServicios}>
                         <MaterialIcons
                             name="sports-tennis"
-                            style={styles.IconsServicios}
+                            style={styles.Icons1}
                         />
                         <Text>Cancha de tennis</Text>
                     </View>
@@ -167,12 +167,20 @@ const styles = StyleSheet.create({
     },
     Icons: {
         flex: 1,
+        justifyContent: 'center',
         flexDirection: 'row',
-        backgroundColor: 'pink'
+        // backgroundColor: 'pink',
+        paddingStart: 30
     },
     IconsServicios: {
-        fontSize: 40,
         color: 'gray',
+        width: '20%',
+        margin: 4,
+    },
+    Icons1: {
+        fontSize: 30,
+        color: 'gray',
+        margin: 8
     }
 
     // https://www.hotelvinasqueirolo.com/
