@@ -109,7 +109,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         // backgroundColor: '#fff',
-        paddingStart: 30
+        paddingStart: 30,
+        // width: '100%'
+
     },
     Search: {
         flex: 1,
@@ -124,6 +126,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         borderColor: '#009688',
         paddingStart: 20,
+        // width: '100%'
     },
     IconSearch: {
         top: 8,
