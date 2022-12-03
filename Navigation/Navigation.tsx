@@ -8,7 +8,7 @@ import ReservasScreen from "../screens/ReservasScreen";
 import NotificationScreen from "../screens/NotificationScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import AgregarScreen from "../screens/AgregarScreen";
-import FavoritesScreen from "../screens/ReservasScreen";
+import FavoritesScreen from "../screens/FavoritesScreen";
 
 const Tab = createBottomTabNavigator();
 

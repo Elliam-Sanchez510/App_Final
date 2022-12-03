@@ -1,10 +1,10 @@
 import React from "react";
-import Reservas from '../Components/Reserv/Reservas';
+import Reservas from "../Components/Reservas/Reservas";
 
-const FavoritesScreen = () => {
+const ReservasScreen  = () => {
     return(
         <Reservas/>
     )
 }
 
-export default FavoritesScreen;
+export default ReservasScreen ;

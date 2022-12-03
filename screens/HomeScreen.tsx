@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { StyleSheet, } from "react-native";
 import Home from "../Components/Home/Home";
 
 

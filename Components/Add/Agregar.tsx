@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View,} from 'react-native';
+import { ScrollView, View,} from 'react-native';
 
 const Agregar = () => {
     return (
