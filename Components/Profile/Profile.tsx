@@ -1,32 +1,75 @@
 import React, { useState } from 'react'
-import { ScrollView, StyleSheet, Image, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { ScrollView, StyleSheet, Image, Text, View, TouchableOpacity, TextInput, } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-
 const Profile = () => {
-    return (
 
+    const [selectedImage, setSelectedImage] = useState(null)
+
+    let openImagePickerAsync = async () => {
+        let PermissionsResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
+
+        if (PermissionsResult.granted === false) {
+            alert("permiso requerido");
+            return;
+        }
+        const pickerResult = await ImagePicker.launchImageLibraryAsync()
+        if (pickerResult.cancelled === true) {
+            return;
+        }
+        setSelectedImage({ localUri: pickerResult.uri })
+    }
+
+    return (
         <ScrollView>
 
             <View style={styles.Container}>
+                <Image
+                    source={{
+                        uri: selectedImage !== null
+                            ? selectedImage.localUri
+                            : "https://www.w3schools.com/howto/img_avatar.png"
+                    }}
+                    style={styles.Image}
+                />
 
-                <TouchableOpacity style={styles.CreateProfile1}>
-                    <MaterialCommunityIcons
-                        name="account-circle-outline"
-                        size={50}
-                        color="black" />
-                    <Text style={styles.CreateProfile}>
-                        Crear Perfil
-                    </Text>
-                </TouchableOpacity>
-
-                <View style={styles.Image}>
-
+                <View style={styles.IconCamera}>
+                    <TouchableOpacity
+                        onPress={openImagePickerAsync}
+                    >
+                        <MaterialCommunityIcons
+                            style={{ fontSize: 20, textAlign: 'center' }}
+                            name="camera"
+                        />
+                    </TouchableOpacity>
                 </View>
 
             </View>
 
+            <View style={styles.Vista}>
+                <View style={{ flexDirection: 'row' }}>
+                    <TextInput
+                        placeholder='Nombre de usuario'
+                        style={styles.Input}
+                    />
+                </View>
+
+                <TextInput
+                    placeholder='Correo electrónico'
+                    style={styles.Input}
+                />
+                <TextInput
+                    placeholder='Contraseña'
+                    secureTextEntry={true}
+                    style={styles.Input}
+                />
+            </View>
         </ScrollView>
+
+
+
+
     )
 }
 export default Profile;
@@ -35,27 +78,44 @@ const styles = StyleSheet.create({
     Container: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#ffffff',
-        margin: 15,
-        padding: '15%',
-        borderRadius: 15,
-    },
-    CreateProfile: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        padding: 10,
-    },
-    CreateProfile1: {
-        flexDirection: 'row',
-        height: 50,
-        left: -30,
-        top: -50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 5,
+        backgroundColor: 'gray',
     },
     Image: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginLeft: 10,
-
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+        margin: 5
     },
+    IconCamera: {
+        width: 30,
+        height: 30,
+        borderRadius: 15,
+        backgroundColor: '#ffffff',
+        justifyContent: 'center',
+        top: 25,
+        right: 25
+    },
+    Vista: {
+        // width: '90%',
+        height: 250,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'pink'
+    },
+    Input: {
+        width: '90%',
+        paddingTop: 10,
+        paddingBottom: 10,
+        backgroundColor: '#fff',
+        color: '#424242',
+        borderWidth: 2,
+        borderRadius: 10,
+        marginTop: 15,
+        borderColor: '#607d8b',
+        paddingStart: 20,
+    },
+
 })

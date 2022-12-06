@@ -1,12 +1,14 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native';
 
 const Reservas = () => {
     return (
         <ScrollView>
 
             <View>
+                <Text style={styles.TextBathroom}>HABITACIONES</Text>
                 <ScrollView horizontal={true}>
+
                     <View style={styles.Container}>
                         <View>
                             <Text style={styles.Headertext}> Suite</Text>
@@ -20,10 +22,11 @@ const Reservas = () => {
                                 <Text style={styles.TextDescription}>
                                     Con una espectacular vista hacia la piscina,
                                     además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    incorporan un exclusivo jacuzzi.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Alert.alert("Reservado")}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -42,10 +45,9 @@ const Reservas = () => {
                             />
                             <View style={styles.RoomDescription}>
                                 <Text style={styles.TextDescription}>
-                                    Con una espectacular vista hacia la piscina,
-                                    además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    Cama King, terraza privada con vista al jardín
+                                    o hacia los viñedos y jacuzzi. Cuenta con servicios
+                                    incluidos como: Aire acondicionado, wifi grattuito.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}>
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
@@ -67,10 +69,9 @@ const Reservas = () => {
                             />
                             <View style={styles.RoomDescription}>
                                 <Text style={styles.TextDescription}>
-                                    Con una espectacular vista hacia la piscina,
-                                    además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    Con vista al jardín o hacia los viñedos y jacuzzi.
+                                    Así como una terraza privada y amplios ventanales
+                                    para disfrutar de las vistas.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}>
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
@@ -97,10 +98,10 @@ const Reservas = () => {
                             />
                             <View style={styles.RoomDescription}>
                                 <Text style={styles.TextDescription}>
-                                    Con una espectacular vista hacia la piscina,
-                                    además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    Despierta y enamórate de los viñedos,
+                                    desde una vista privilegiada, en un ambiente
+                                    que combina la majestuosidad del estilo
+                                    republicano con elegantes acabados.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}>
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
@@ -121,10 +122,10 @@ const Reservas = () => {
                             />
                             <View style={styles.RoomDescription}>
                                 <Text style={styles.TextDescription}>
-                                    Con una espectacular vista hacia la piscina,
-                                    además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    Disfruta de la exclusividad de tus habitaciones
+                                    y siente la magia de la tierra del sol eterno en
+                                    un lugar inolvidable. Incluye terraza privada y
+                                    una expectacular piscina.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}>
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
@@ -141,15 +142,15 @@ const Reservas = () => {
                             <Image
                                 style={styles.Imag}
                                 source={{
-                                    uri: "https://sunway.es/images/bloques/1/habitaciones/B7/galeria/800/1-habitacion-doble-superior-vistas-mar.jpg"
+                                    uri: "https://media-cdn.tripadvisor.com/media/photo-s/0e/89/cc/e6/apart-hotel-ref.jpg"
                                 }}
                             />
                             <View style={styles.RoomDescription}>
                                 <Text style={styles.TextDescription}>
-                                    Con una espectacular vista hacia la piscina,
-                                    además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    2 camas twin, terraza privada, con vista a
+                                    la piscina de descanso o hacia los viñedos.
+                                    Además, tenemos a tu disposición habitaciones familiares.
+                                    para pasar momentos relajados.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}>
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
@@ -178,8 +179,7 @@ const Reservas = () => {
                                 <Text style={styles.TextDescription}>
                                     Con una espectacular vista hacia la piscina,
                                     además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    incorporan un exclusivo jacuzzi.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}>
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
@@ -200,10 +200,9 @@ const Reservas = () => {
                             />
                             <View style={styles.RoomDescription}>
                                 <Text style={styles.TextDescription}>
-                                    Con una espectacular vista hacia la piscina,
-                                    además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    Disfruta de la exclusividad de tus habitaciones
+                                    y siente la magia de la tierra del sol eterno en
+                                    un lugar inolvidable.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}>
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
@@ -225,10 +224,127 @@ const Reservas = () => {
                             />
                             <View style={styles.RoomDescription}>
                                 <Text style={styles.TextDescription}>
-                                    Con una espectacular vista hacia la piscina,
-                                    además de ser las únicas habitaciones que
-                                    incorporan un exclusivo jacuzzi, ideal para
-                                    pasar un momento de relajo junto a tu pareja.
+                                    Cama King, terraza privada con vista al jardín
+                                    o hacia los viñedos y jacuzzi. Cuenta con servicios
+                                    incluidos como: Aire acondicionado, wifi grattuito.
+                                    <View style={styles.RoomDescription}>
+                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                            <Text style={styles.ButtonReserv}>RESERVAR</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </Text>
+                            </View>
+
+                        </View>
+
+                        <View>
+                            <Text style={styles.Headertext}> Junior pluss matrimonial</Text>
+                            <Image
+                                style={styles.Imag}
+                                source={{
+                                    uri: "https://www.hotelvinasqueirolo.com/v02/images/rooms/junior-plus-matrimonial.jpg"
+                                }}
+                            />
+                            <View style={styles.RoomDescription}>
+                                <Text style={styles.TextDescription}>
+                                    Disfruta de la exclusividad de tus habitaciones
+                                    y siente la magia de la tierra del sol eterno en
+                                    un lugar inolvidable.
+                                    <View style={styles.RoomDescription}>
+                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                            <Text style={styles.ButtonReserv}>RESERVAR</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </Text>
+                            </View>
+
+                        </View>
+
+                        <View>
+                            <Text style={styles.Headertext}> Junior pluss doble</Text>
+                            <Image
+                                style={styles.Imag}
+                                source={{
+                                    uri: "https://www.hotelvinasqueirolo.com/v02/images/rooms/jp-doble.jpg"
+                                }}
+                            />
+                            <View style={styles.RoomDescription}>
+                                <Text style={styles.TextDescription}>
+                                    Con vista al jardín o hacia los viñedos y jacuzzi.
+                                    Así como una terraza privada y amplios ventanales
+                                    para disfrutar de las vistas.
+                                    <View style={styles.RoomDescription}>
+                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                            <Text style={styles.ButtonReserv}>RESERVAR</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </Text>
+                            </View>
+
+                        </View>
+
+
+                        <View>
+                            <Text style={styles.Headertext}> Junior triple</Text>
+                            <Image
+                                style={styles.Imag}
+                                source={{
+                                    uri: "https://www.hotelvinasqueirolo.com/v02/images/rooms/j-triple.jpg"
+                                }}
+                            />
+                            <View style={styles.RoomDescription}>
+                                <Text style={styles.TextDescription}>
+                                    Cama King, terraza privada con vista al jardín
+                                    o hacia los viñedos y jacuzzi. Cuenta con servicios
+                                    incluidos como: Aire acondicionado, wifi grattuito.
+                                    <View style={styles.RoomDescription}>
+                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                            <Text style={styles.ButtonReserv}>RESERVAR</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </Text>
+                            </View>
+
+                        </View>
+
+
+                        <View>
+                            <Text style={styles.Headertext}> Junior cuadruple</Text>
+                            <Image
+                                style={styles.Imag}
+                                source={{
+                                    uri: "https://www.hotelvinasqueirolo.com/v02/images/rooms/j-cuadruple.jpg"
+                                }}
+                            />
+                            <View style={styles.RoomDescription}>
+                                <Text style={styles.TextDescription}>
+                                    Con vista al jardín o hacia los viñedos y jacuzzi.
+                                    Así como una terraza privada y amplios ventanales
+                                    para disfrutar de las vistas.
+                                    <View style={styles.RoomDescription}>
+                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                            <Text style={styles.ButtonReserv}>RESERVAR</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </Text>
+                            </View>
+
+                        </View>
+
+
+                        <View>
+                            <Text style={styles.Headertext}> Junior familiar</Text>
+                            <Image
+                                style={styles.Imag}
+                                source={{
+                                    uri: "https://www.hotelvinasqueirolo.com/v02/images/rooms/junior-familiar.jpg"
+                                }}
+                            />
+                            <View style={styles.RoomDescription}>
+                                <Text style={styles.TextDescription}>
+                                    Con vista al jardín o hacia los viñedos y jacuzzi.
+                                    Así como una terraza privada y amplios ventanales
+                                    para disfrutar de las vistas.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}>
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
@@ -255,6 +371,12 @@ const styles = StyleSheet.create({
         // backgroundColor: 'gray',
         margin: 10,
         justifyContent: 'space-around'
+    },
+    TextBathroom: {
+        textAlign: 'center',
+        fontSize: 20,
+        margin: 5,
+        fontWeight: 'bold',
     },
     Headertext: {
         fontSize: 15,
