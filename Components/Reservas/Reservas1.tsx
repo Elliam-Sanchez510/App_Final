@@ -3,8 +3,6 @@ import React from 'react'
 
 export default function Reservas1() {
     return (
-
-
         <View>
             <Text style={styles.TextBathroom}>HABITACIONES</Text>
             <ScrollView horizontal={true}>
@@ -84,7 +82,6 @@ export default function Reservas1() {
                 </View>
             </ScrollView>
 
-
         </View>
     )
 }
@@ -93,7 +90,6 @@ const styles = StyleSheet.create({
     Container: {
         flex: 1,
         flexDirection: 'row',
-        // backgroundColor: 'gray',
         margin: 10,
         justifyContent: 'space-around'
     },
@@ -118,7 +114,6 @@ const styles = StyleSheet.create({
     RoomDescription: {
         width: 230,
         height: 145,
-        // backgroundColor: 'gray'
     },
     TextDescription: {
         textAlign: 'justify',
@@ -132,5 +127,4 @@ const styles = StyleSheet.create({
         color: '#fff',
         borderRadius: 5,
     }
-
 })

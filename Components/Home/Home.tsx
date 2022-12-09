@@ -95,16 +95,12 @@ const styles = StyleSheet.create({
     Container: {
         flex: 1,
         backgroundColor: 'gray',
-
     },
     searchSection: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        // backgroundColor: '#fff',
         paddingStart: 30,
-        // width: '100%'
-
     },
     Search: {
         flex: 1,
@@ -119,19 +115,16 @@ const styles = StyleSheet.create({
         marginTop: 15,
         borderColor: '#009688',
         paddingStart: 20,
-        // width: '100%'
     },
     IconSearch: {
         top: 8,
         right: 35,
         fontSize: 10,
         borderRadius: 10
-
     },
     Image: {
         width: '90%',
         margin: 5,
-        // backgroundColor: 'green'
         paddingStart: 10,
     },
     Images1: {
@@ -145,7 +138,6 @@ const styles = StyleSheet.create({
         width: '90%',
         alignItems: 'center',
         paddingStart: 30,
-        // backgroundColor: 'gray',
     },
     Text1: {
         fontSize: 15,
@@ -164,7 +156,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         flexDirection: 'row',
-        // backgroundColor: 'pink',
         paddingStart: 30
     },
     IconsServicios: {

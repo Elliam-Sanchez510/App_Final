@@ -46,7 +46,27 @@ const Profile = () => {
                 </View>
             </View>
 
-            <View style={styles.Vista}>
+            <View style={styles.TextName}>
+                <Text style={styles.TextName1}>Elliam Sánchez</Text>
+                <Text style={styles.TextName1}>elliamsanchez510@gmail.com</Text>
+            </View>
+
+            <View style={styles.TextName}>
+                <Text style={styles.TextName1}>Inicio de sesion vinculado</Text>
+
+                <View style={styles.Sesion}>
+                    <TouchableOpacity>
+                        <Text style={{ fontSize: 20, margin: 10, backgroundColor: '#abb8c3', }}>Facebook</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <Text style={{ fontSize: 20, margin: 10, backgroundColor: '#abb8c3' }}>Google</Text>
+                    </TouchableOpacity>
+                </View>
+
+            </View>
+
+            {/* <View style={styles.Vista}>
                 <TextInput
                     style={styles.Input}
                 />
@@ -59,7 +79,7 @@ const Profile = () => {
                     secureTextEntry={true}
                     style={styles.Input}
                 />
-            </View>
+            </View> */}
         </ScrollView>
 
     )
@@ -73,7 +93,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         margin: 5,
-        // backgroundColor: 'gray',
     },
     Image: {
         width: 100,
@@ -94,7 +113,6 @@ const styles = StyleSheet.create({
         height: 250,
         alignItems: 'center',
         justifyContent: 'center',
-        // backgroundColor: 'pink'
     },
     Input: {
         width: '90%',
@@ -108,5 +126,18 @@ const styles = StyleSheet.create({
         borderColor: '#00bcd4',
         paddingStart: 20,
     },
+    TextName: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 15,
+    },
+    TextName1: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        alignItems: 'center',
+    },
+    Sesion: {
+        flexDirection: 'row',
+    }
 
 })

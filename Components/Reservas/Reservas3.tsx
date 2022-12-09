@@ -206,7 +206,6 @@ const styles = StyleSheet.create({
     Container: {
         flex: 1,
         flexDirection: 'row',
-        // backgroundColor: 'gray',
         margin: 10,
         justifyContent: 'space-around'
     },
@@ -231,7 +230,6 @@ const styles = StyleSheet.create({
     RoomDescription: {
         width: 230,
         height: 145,
-        // backgroundColor: 'gray'
     },
     TextDescription: {
         textAlign: 'justify',

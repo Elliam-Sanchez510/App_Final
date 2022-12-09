@@ -80,7 +80,6 @@ export default function Reservas2() {
                     </View>
 
                 </View>
-
             </ScrollView>
         </View>
     )
@@ -114,7 +113,6 @@ const styles = StyleSheet.create({
     RoomDescription: {
         width: 230,
         height: 145,
-        // backgroundColor: 'gray'
     },
     TextDescription: {
         textAlign: 'justify',

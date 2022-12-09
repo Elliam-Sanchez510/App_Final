@@ -7,11 +7,15 @@ import Reservas3 from './Reservas3';
 
 const Reservas = () => {
     return (
-        <View>
-            <Reservas1/>
-            <Reservas2/>
-            <Reservas3/>
-        </View>
+        <ScrollView>
+            <View>
+                <Reservas1 />
+                <Reservas2 />
+                <Reservas3 />
+            </View>
+
+        </ScrollView>
+
     )
 }
 export default Reservas;
