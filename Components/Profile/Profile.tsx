@@ -44,15 +44,12 @@ const Profile = () => {
                         />
                     </TouchableOpacity>
                 </View>
-
             </View>
 
             <View style={styles.Vista}>
-                    <TextInput
-                        placeholder='Nombre de usuario'
-                        style={styles.Input}
-                    />
-
+                <TextInput
+                    style={styles.Input}
+                />
                 <TextInput
                     placeholder='Correo electrónico'
                     style={styles.Input}
@@ -64,9 +61,6 @@ const Profile = () => {
                 />
             </View>
         </ScrollView>
-
-
-
 
     )
 }
@@ -97,7 +91,6 @@ const styles = StyleSheet.create({
         right: 25
     },
     Vista: {
-        // width: '90%',
         height: 250,
         alignItems: 'center',
         justifyContent: 'center',
@@ -112,7 +105,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 10,
         marginTop: 15,
-        borderColor: '#607d8b',
+        borderColor: '#00bcd4',
         paddingStart: 20,
     },
 

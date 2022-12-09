@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView,} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, } from 'react-native';
 import React from 'react'
 
 export default function Reservas1() {

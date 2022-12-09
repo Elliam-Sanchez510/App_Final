@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity,  Image } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -27,7 +27,6 @@ const Home = () => {
                         source={{
                             uri: "https://megaricos.com/wp-content/uploads/2019/07/shutterstock_184155629.jpg"
                         }}
-
                     />
                 </View>
 
@@ -94,10 +93,8 @@ export default Home;
 
 const styles = StyleSheet.create({
     Container: {
-        // flex: 1,
-        // backgroundColor: 'gray',
-        // alignItems: 'center',
-        // justifyContent: 'center',
+        flex: 1,
+        backgroundColor: 'gray',
 
     },
     searchSection: {
@@ -149,7 +146,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingStart: 30,
         // backgroundColor: 'gray',
-
     },
     Text1: {
         fontSize: 15,
@@ -180,7 +176,5 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: 'gray',
         margin: 8
-    }
-    // https://www.hotelvinasqueirolo.com/
-
+    },
 })
