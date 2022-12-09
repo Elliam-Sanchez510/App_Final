@@ -19,7 +19,7 @@ const Profile = () => {
             return;
         }
         setSelectedImage({ localUri: pickerResult.uri })
-    }
+    };
 
     return (
         <ScrollView>
@@ -48,12 +48,10 @@ const Profile = () => {
             </View>
 
             <View style={styles.Vista}>
-                <View style={{ flexDirection: 'row' }}>
                     <TextInput
                         placeholder='Nombre de usuario'
                         style={styles.Input}
                     />
-                </View>
 
                 <TextInput
                     placeholder='Correo electrónico'
@@ -81,13 +79,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         margin: 5,
-        backgroundColor: 'gray',
+        // backgroundColor: 'gray',
     },
     Image: {
         width: 100,
         height: 100,
         borderRadius: 50,
-        margin: 5
+        margin: 5,
     },
     IconCamera: {
         width: 30,
@@ -103,7 +101,7 @@ const styles = StyleSheet.create({
         height: 250,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'pink'
+        // backgroundColor: 'pink'
     },
     Input: {
         width: '90%',
