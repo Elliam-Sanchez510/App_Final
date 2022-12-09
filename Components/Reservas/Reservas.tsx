@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, Alert, Vibration} from 'react-native';
 
 const Reservas = () => {
     return (
@@ -7,7 +7,10 @@ const Reservas = () => {
 
             <View>
                 <Text style={styles.TextBathroom}>HABITACIONES</Text>
-                <ScrollView horizontal={true}>
+                <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                >
 
                     <View style={styles.Container}>
                         <View>
@@ -15,7 +18,7 @@ const Reservas = () => {
                             <Image
                                 style={styles.Imag}
                                 source={{
-                                    uri: "https://www.casacelsa.com/wp-content/uploads/2016/05/habitacion2.jpg"
+                                    uri: "https://www.hotelvinasqueirolo.com/v02/images/rooms/p-suite.jpg"
                                 }}
                             />
                             <View style={styles.RoomDescription}>
@@ -25,7 +28,7 @@ const Reservas = () => {
                                     incorporan un exclusivo jacuzzi.
                                     <View style={styles.RoomDescription}>
                                         <TouchableOpacity style={styles.ButtonReserv}
-                                        onPress={() => Alert.alert("Reservado")}
+                                        onPress={() => Vibration.vibrate(1)}
                                         >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
@@ -49,7 +52,9 @@ const Reservas = () => {
                                     o hacia los viñedos y jacuzzi. Cuenta con servicios
                                     incluidos como: Aire acondicionado, wifi grattuito.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -73,7 +78,9 @@ const Reservas = () => {
                                     Así como una terraza privada y amplios ventanales
                                     para disfrutar de las vistas.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -86,7 +93,10 @@ const Reservas = () => {
                 </ScrollView>
 
 
-                <ScrollView horizontal={true}>
+                <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                >
                     <View style={styles.Container}>
                         <View>
                             <Text style={styles.Headertext}> Superior</Text>
@@ -101,9 +111,11 @@ const Reservas = () => {
                                     Despierta y enamórate de los viñedos,
                                     desde una vista privilegiada, en un ambiente
                                     que combina la majestuosidad del estilo
-                                    republicano con elegantes acabados.
+                                    republicano
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -124,10 +136,11 @@ const Reservas = () => {
                                 <Text style={styles.TextDescription}>
                                     Disfruta de la exclusividad de tus habitaciones
                                     y siente la magia de la tierra del sol eterno en
-                                    un lugar inolvidable. Incluye terraza privada y
-                                    una expectacular piscina.
+                                    un lugar inolvidable.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -150,9 +163,10 @@ const Reservas = () => {
                                     2 camas twin, terraza privada, con vista a
                                     la piscina de descanso o hacia los viñedos.
                                     Además, tenemos a tu disposición habitaciones familiares.
-                                    para pasar momentos relajados.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -165,7 +179,10 @@ const Reservas = () => {
 
                 </ScrollView>
 
-                <ScrollView horizontal={true}>
+                <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                >
                     <View style={styles.Container}>
                         <View>
                             <Text style={styles.Headertext}> Junior</Text>
@@ -181,7 +198,9 @@ const Reservas = () => {
                                     además de ser las únicas habitaciones que
                                     incorporan un exclusivo jacuzzi.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -204,7 +223,9 @@ const Reservas = () => {
                                     y siente la magia de la tierra del sol eterno en
                                     un lugar inolvidable.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -228,7 +249,9 @@ const Reservas = () => {
                                     o hacia los viñedos y jacuzzi. Cuenta con servicios
                                     incluidos como: Aire acondicionado, wifi grattuito.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -251,7 +274,9 @@ const Reservas = () => {
                                     y siente la magia de la tierra del sol eterno en
                                     un lugar inolvidable.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -274,7 +299,9 @@ const Reservas = () => {
                                     Así como una terraza privada y amplios ventanales
                                     para disfrutar de las vistas.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -298,7 +325,9 @@ const Reservas = () => {
                                     o hacia los viñedos y jacuzzi. Cuenta con servicios
                                     incluidos como: Aire acondicionado, wifi grattuito.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -322,7 +351,9 @@ const Reservas = () => {
                                     Así como una terraza privada y amplios ventanales
                                     para disfrutar de las vistas.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -346,7 +377,9 @@ const Reservas = () => {
                                     Así como una terraza privada y amplios ventanales
                                     para disfrutar de las vistas.
                                     <View style={styles.RoomDescription}>
-                                        <TouchableOpacity style={styles.ButtonReserv}>
+                                        <TouchableOpacity style={styles.ButtonReserv}
+                                        onPress={() => Vibration.vibrate(1)}
+                                        >
                                             <Text style={styles.ButtonReserv}>RESERVAR</Text>
                                         </TouchableOpacity>
                                     </View>

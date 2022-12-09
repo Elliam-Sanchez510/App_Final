@@ -94,10 +94,8 @@ export default Home;
 
 const styles = StyleSheet.create({
     Container: {
-        // flex: 1,
-        // backgroundColor: 'gray',
-        // alignItems: 'center',
-        // justifyContent: 'center',
+        flex: 1,
+        backgroundColor: 'gray',
 
     },
     searchSection: {

@@ -44,17 +44,12 @@ const Profile = () => {
                         />
                     </TouchableOpacity>
                 </View>
-
             </View>
 
             <View style={styles.Vista}>
-                <View style={{ flexDirection: 'row' }}>
                     <TextInput
-                        placeholder='Nombre de usuario'
                         style={styles.Input}
                     />
-                </View>
-
                 <TextInput
                     placeholder='Correo electrónico'
                     style={styles.Input}
@@ -67,9 +62,6 @@ const Profile = () => {
             </View>
         </ScrollView>
 
-
-
-
     )
 }
 export default Profile;
@@ -81,13 +73,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         margin: 5,
-        backgroundColor: 'gray',
+        // backgroundColor: 'gray',
     },
     Image: {
         width: 100,
         height: 100,
         borderRadius: 50,
-        margin: 5
+        margin: 5,
     },
     IconCamera: {
         width: 30,
@@ -99,11 +91,10 @@ const styles = StyleSheet.create({
         right: 25
     },
     Vista: {
-        // width: '90%',
         height: 250,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'pink'
+        // backgroundColor: 'pink'
     },
     Input: {
         width: '90%',
@@ -114,7 +105,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 10,
         marginTop: 15,
-        borderColor: '#607d8b',
+        borderColor: '#00bcd4',
         paddingStart: 20,
     },
 
