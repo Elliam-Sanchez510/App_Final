@@ -1,143 +1,111 @@
-import React, { useState } from 'react'
-import { ScrollView, StyleSheet, Image, Text, View, TouchableOpacity, TextInput, } from 'react-native';
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, Image, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Profile = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [name, setName] = useState('Elliam Sánchez');
+    const [email, setEmail] = useState('elliamsanchez510@gmail.com');
 
-    const [selectedImage, setSelectedImage] = useState(null)
+    const openImagePickerAsync = async () => {
+        let permissionsResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
-    let openImagePickerAsync = async () => {
-        let PermissionsResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
-
-        if (PermissionsResult.granted === false) {
-            alert("permiso requerido");
+        if (permissionsResult.granted === false) {
+            alert('Permiso requerido para acceder a la galería de imágenes.');
             return;
         }
-        const pickerResult = await ImagePicker.launchImageLibraryAsync()
-        if (pickerResult.cancelled === true) {
-            return;
+
+        const pickerResult = await ImagePicker.launchImageLibraryAsync();
+        if (!pickerResult.cancelled) {
+            setSelectedImage({ localUri: pickerResult.uri });
         }
-        setSelectedImage({ localUri: pickerResult.uri })
     };
 
     return (
-        <ScrollView>
-
-            <View style={styles.Container}>
+        <ScrollView style={styles.container}>
+            <View style={styles.profileContainer}>
                 <Image
                     source={{
-                        uri: selectedImage !== null
-                            ? selectedImage.localUri
-                            : "https://www.w3schools.com/howto/img_avatar.png"
+                        uri: selectedImage ? selectedImage.localUri : 'https://www.w3schools.com/howto/img_avatar.png',
                     }}
-                    style={styles.Image}
+                    style={styles.profileImage}
                 />
-
-                <View style={styles.IconCamera}>
-                    <TouchableOpacity
-                        onPress={openImagePickerAsync}
-                    >
-                        <MaterialCommunityIcons
-                            style={{ fontSize: 20, textAlign: 'center' }}
-                            name="camera"
-                        />
+                <View style={styles.cameraIcon}>
+                    <TouchableOpacity onPress={openImagePickerAsync}>
+                        <MaterialCommunityIcons name="camera" size={24} color="black" />
                     </TouchableOpacity>
                 </View>
             </View>
-
-            <View style={styles.TextName}>
-                <Text style={styles.TextName1}>Elliam Sánchez</Text>
-                <Text style={styles.TextName1}>elliamsanchez510@gmail.com</Text>
+            <View style={styles.textContainer}>
+                <Text style={styles.name}>{name}</Text>
+                <Text style={styles.email}>{email}</Text>
             </View>
-
-            <View style={styles.TextName}>
-                <Text style={styles.TextName1}>Inicio de sesion vinculado</Text>
-
-                <View style={styles.Sesion}>
-                    <TouchableOpacity>
-                        <Text style={{ fontSize: 20, margin: 10, backgroundColor: '#abb8c3', }}>Facebook</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <Text style={{ fontSize: 20, margin: 10, backgroundColor: '#abb8c3' }}>Google</Text>
-                    </TouchableOpacity>
-                </View>
-
+            <View style={styles.loginMethods}>
+                <TouchableOpacity style={styles.loginButton}>
+                    <Text style={styles.buttonText}>Iniciar sesión con Facebook</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.loginButton}>
+                    <Text style={styles.buttonText}>Iniciar sesión con Google</Text>
+                </TouchableOpacity>
             </View>
-
-            {/* <View style={styles.Vista}>
-                <TextInput
-                    style={styles.Input}
-                />
-                <TextInput
-                    placeholder='Correo electrónico'
-                    style={styles.Input}
-                />
-                <TextInput
-                    placeholder='Contraseña'
-                    secureTextEntry={true}
-                    style={styles.Input}
-                />
-            </View> */}
         </ScrollView>
-
-    )
-}
-export default Profile;
+    );
+};
 
 const styles = StyleSheet.create({
-    Container: {
+    container: {
         flex: 1,
+        backgroundColor: '#f2f2f2',
+    },
+    profileContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: 5,
+        margin: 20,
     },
-    Image: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
-        margin: 5,
+    profileImage: {
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+        marginEnd: 20,
     },
-    IconCamera: {
-        width: 30,
-        height: 30,
-        borderRadius: 15,
+    cameraIcon: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
         backgroundColor: '#ffffff',
-        justifyContent: 'center',
-        top: 25,
-        right: 25
+        borderRadius: 20,
+        padding: 8,
     },
-    Vista: {
-        height: 250,
+    textContainer: {
         alignItems: 'center',
-        justifyContent: 'center',
+        marginBottom: 20,
     },
-    Input: {
-        width: '90%',
-        paddingTop: 10,
-        paddingBottom: 10,
-        backgroundColor: '#fff',
-        color: '#424242',
-        borderWidth: 2,
-        borderRadius: 10,
-        marginTop: 15,
-        borderColor: '#00bcd4',
-        paddingStart: 20,
-    },
-    TextName: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 15,
-    },
-    TextName1: {
-        fontSize: 20,
+    name: {
+        fontSize: 24,
         fontWeight: 'bold',
-        alignItems: 'center',
+        marginBottom: 5,
     },
-    Sesion: {
-        flexDirection: 'row',
-    }
+    email: {
+        fontSize: 18,
+        color: '#666666',
+    },
+    loginMethods: {
+        margin: 20,
+    },
+    loginButton: {
+        backgroundColor: '#4285f4',
+        padding: 15,
+        borderRadius: 10,
+        marginVertical: 10,
+    },
+    buttonText: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+});
 
-})
+export default Profile;
