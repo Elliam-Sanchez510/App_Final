@@ -1,171 +1,95 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 
 const Home = () => {
     return (
-        <ScrollView style={styles.Container}>
-
-            <View style={styles.Container}>
-                <View style={styles.searchSection}>
-                    <TextInput
-                        placeholder='Buscar'
-                        style={styles.Search}
-                    />
-                    <View style={styles.IconSearch}>
-                        <TouchableOpacity>
-                            <AntDesign name="search1" size={30} color="black" />
-                        </TouchableOpacity>
-                    </View>
-                </View>
-
-                <View style={styles.Image}>
-                    <Image
-                        style={styles.Images1}
-                        source={{
-                            uri: "https://megaricos.com/wp-content/uploads/2019/07/shutterstock_184155629.jpg"
-                        }}
-                    />
-                </View>
-
-                <View style={styles.Text}>
-                    <Text style={styles.Text1}>
-                        Cosecha experiencias en tu estancia en nuestro Hotel. Vivirás momentos
-                        agradables que quedarán en tu memoria.
-                    </Text>
-                </View>
-
-                <Text style={styles.TextServicios}>Servicios</Text>
-
-
-                <View style={styles.Icons}>
-
-                    <View style={styles.IconsServicios}>
-                        <MaterialCommunityIcons
-                            name="car-settings"
-                            style={styles.Icons1}
-                        />
-                        <Text>Parqueo privado</Text>
-                    </View>
-
-                    <View style={styles.IconsServicios}>
-                        <MaterialCommunityIcons
-                            name="wifi-arrow-left-right"
-                            style={styles.Icons1}
-                        />
-                        <Text>Wifi</Text>
-                    </View>
-
-                    <View style={styles.IconsServicios}>
-                        <MaterialCommunityIcons
-                            name="car-child-seat"
-                            style={styles.Icons1}
-                        />
-                        <Text>Juegos para niños</Text>
-                    </View>
-
-                    <View style={styles.IconsServicios}>
-                        <MaterialCommunityIcons
-                            name="bathtub"
-                            style={styles.Icons1}
-                        />
-                        <Text>Piscinas</Text>
-                    </View>
-
-                    <View style={styles.IconsServicios}>
-                        <MaterialIcons
-                            name="sports-tennis"
-                            style={styles.Icons1}
-                        />
-                        <Text>Cancha de tennis</Text>
-                    </View>
-
-                </View>
-
+        <ScrollView style={styles.container}>
+            <View style={styles.header}>
+                <Text style={styles.headerText}>Encuentra tu Estancia Perfecta</Text>
             </View>
 
+            <View style={styles.searchSection}>
+                <TextInput
+                    placeholder='Buscar hoteles, ciudades...'
+                    style={styles.searchInput}
+                />
+                <TouchableOpacity style={styles.searchButton}>
+                    <AntDesign name="search1" size={24} color="white" />
+                </TouchableOpacity>
+            </View>
+
+            <View style={styles.featuredHotels}>
+                <Text style={styles.featuredHeading}>Hoteles Destacados</Text>
+            </View>
+
+            <View style={styles.promotionContainer}>
+                <Text style={styles.promotionHeading}>Ofertas Especiales</Text>
+                <Text style={styles.promotionText}>
+                    ¡Reserva ahora y obtén un descuento del 20% en tu próxima estancia!
+                </Text>
+            </View>
         </ScrollView>
-    )
-}
+    );
+};
+
 export default Home;
 
 const styles = StyleSheet.create({
-    Container: {
+    container: {
         flex: 1,
-        backgroundColor: 'gray',
+        backgroundColor: '#fff',
+    },
+    header: {
+        backgroundColor: '#009688',
+        padding: 20,
+        marginBottom: 10,
+    },
+    headerText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: 'white',
+        textAlign: 'center',
     },
     searchSection: {
-        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingStart: 30,
+        marginHorizontal: 20,
+        marginBottom: 20,
     },
-    Search: {
+    searchInput: {
         flex: 1,
-        paddingTop: 10,
-        paddingRight: 10,
-        paddingBottom: 10,
-        backgroundColor: '#fff',
-        color: '#424242',
-        borderWidth: 2,
-        borderRadius: 10,
-        paddingLeft: 10,
-        marginTop: 15,
-        borderColor: '#009688',
-        paddingStart: 20,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        backgroundColor: '#f0f0f0',
+        borderRadius: 25,
+        fontSize: 16,
     },
-    IconSearch: {
-        top: 8,
-        right: 35,
-        fontSize: 10,
-        borderRadius: 10
+    searchButton: {
+        backgroundColor: '#009688',
+        borderRadius: 25,
+        padding: 10,
+        marginLeft: 10,
     },
-    Image: {
-        width: '90%',
-        margin: 5,
-        paddingStart: 10,
+    featuredHotels: {
+        marginHorizontal: 20,
+        marginBottom: 30,
     },
-    Images1: {
-        margin: 13,
-        width: '100%',
-        height: 200,
-        borderRadius: 8,
-    },
-    Text: {
-        flex: 1,
-        width: '90%',
-        alignItems: 'center',
-        paddingStart: 30,
-    },
-    Text1: {
-        fontSize: 15,
-        fontWeight: 'bold',
-        textAlign: 'justify',
-        paddingStart: 10,
-    },
-
-    TextServicios: {
-        textAlign: 'center',
+    featuredHeading: {
         fontSize: 20,
-        margin: 5,
         fontWeight: 'bold',
+        marginBottom: 10,
     },
-    Icons: {
-        flex: 1,
-        justifyContent: 'center',
-        flexDirection: 'row',
-        paddingStart: 30
+    promotionContainer: {
+        marginHorizontal: 20,
+        marginBottom: 20,
     },
-    IconsServicios: {
-        color: 'gray',
-        width: '20%',
-        margin: 4,
+    promotionHeading: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 10,
     },
-    Icons1: {
-        fontSize: 30,
-        color: 'gray',
-        margin: 8
+    promotionText: {
+        fontSize: 16,
     },
-})
+});

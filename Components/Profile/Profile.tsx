@@ -1,108 +1,118 @@
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Image, Text, View, TouchableOpacity, TextInput } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
+import { ScrollView, StyleSheet, Switch, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Profile = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [darkMode, setDarkMode] = useState(false);
     const [name, setName] = useState('Elliam Sánchez');
     const [email, setEmail] = useState('elliamsanchez510@gmail.com');
 
-    const openImagePickerAsync = async () => {
-        let permissionsResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-
-        if (permissionsResult.granted === false) {
-            alert('Permiso requerido para acceder a la galería de imágenes.');
-            return;
-        }
-
-        const pickerResult = await ImagePicker.launchImageLibraryAsync();
-        if (!pickerResult.cancelled) {
-            setSelectedImage({ localUri: pickerResult.uri });
-        }
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+        // Implementa el cambio al modo oscuro en tu aplicación aquí
     };
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={darkMode ? styles.containerDark : styles.containerLight}>
             <View style={styles.profileContainer}>
-                <Image
-                    source={{
-                        uri: selectedImage ? selectedImage.localUri : 'https://www.w3schools.com/howto/img_avatar.png',
-                    }}
-                    style={styles.profileImage}
+                <MaterialCommunityIcons name="account-circle" size={120} color={darkMode ? '#ffffff' : '#333333'} />
+            </View>
+
+            <View style={styles.inputContainer}>
+                <TextInput
+                    style={darkMode ? styles.inputFieldDark : styles.inputFieldLight}
+                    placeholder="Nombre"
+                    value={name}
+                    onChangeText={(text) => setName(text)}
                 />
-                <View style={styles.cameraIcon}>
-                    <TouchableOpacity onPress={openImagePickerAsync}>
-                        <MaterialCommunityIcons name="camera" size={24} color="black" />
-                    </TouchableOpacity>
+                <TextInput
+                    style={darkMode ? styles.inputFieldDark : styles.inputFieldLight}
+                    placeholder="Correo Electrónico"
+                    value={email}
+                    onChangeText={(text) => setEmail(text)}
+                />
+            </View>
+
+            <View style={styles.settingsContainer}>
+                <View style={styles.settingItem}>
+                    <Text style={darkMode ? styles.settingTextDark : styles.settingTextLight}>Modo Oscuro</Text>
+                    <Switch value={darkMode} onValueChange={toggleDarkMode} />
                 </View>
+                {/* Agrega más configuraciones relevantes aquí */}
             </View>
-            <View style={styles.textContainer}>
-                <Text style={styles.name}>{name}</Text>
-                <Text style={styles.email}>{email}</Text>
-            </View>
-            <View style={styles.loginMethods}>
-                <TouchableOpacity style={styles.loginButton}>
-                    <Text style={styles.buttonText}>Iniciar sesión con Facebook</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.loginButton}>
-                    <Text style={styles.buttonText}>Iniciar sesión con Google</Text>
-                </TouchableOpacity>
-            </View>
+
+            <TouchableOpacity style={darkMode ? styles.logoutButtonDark : styles.logoutButtonLight}>
+                <Text style={styles.logoutButtonText}>Cerrar Sesión</Text>
+            </TouchableOpacity>
         </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
-    container: {
+    containerLight: {
         flex: 1,
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#ffffff',
+    },
+    containerDark: {
+        flex: 1,
+        backgroundColor: '#121212',
     },
     profileContainer: {
-        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: 20,
+        marginVertical: 30,
     },
-    profileImage: {
-        width: 120,
-        height: 120,
-        borderRadius: 60,
-        marginEnd: 20,
+    inputContainer: {
+        marginHorizontal: 20,
+        marginBottom: 20,
     },
-    cameraIcon: {
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
-        backgroundColor: '#ffffff',
-        borderRadius: 20,
-        padding: 8,
+    inputFieldLight: {
+        backgroundColor: '#f2f2f2',
+        borderRadius: 10,
+        padding: 15,
+        marginBottom: 15,
     },
-    textContainer: {
+    inputFieldDark: {
+        backgroundColor: '#333333',
+        color: '#ffffff',
+        borderRadius: 10,
+        padding: 15,
+        marginBottom: 15,
+    },
+    settingsContainer: {
+        marginHorizontal: 20,
+        marginBottom: 20,
+    },
+    settingItem: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: 20,
     },
-    name: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 5,
-    },
-    email: {
+    settingTextLight: {
         fontSize: 18,
-        color: '#666666',
+        color: '#333333',
     },
-    loginMethods: {
-        margin: 20,
+    settingTextDark: {
+        fontSize: 18,
+        color: '#ffffff',
     },
-    loginButton: {
+    logoutButtonLight: {
         backgroundColor: '#4285f4',
         padding: 15,
         borderRadius: 10,
-        marginVertical: 10,
+        marginHorizontal: 20,
+        alignItems: 'center',
     },
-    buttonText: {
+    logoutButtonDark: {
+        backgroundColor: '#4CAF50',
+        padding: 15,
+        borderRadius: 10,
+        marginHorizontal: 20,
+        alignItems: 'center',
+    },
+    logoutButtonText: {
         color: 'white',
-        textAlign: 'center',
         fontSize: 18,
         fontWeight: 'bold',
     },
